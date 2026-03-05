@@ -159,6 +159,8 @@ function clearChat(){
   </div>`;
 }
 
+const API_BASE = 'https://techmatch-ai.vercel.app';
+
 async function sendMessage(){
   if(isSending) return;
   const input = document.getElementById('chatInput');
@@ -202,7 +204,7 @@ For PC builds: suggest specific component combinations.
 
 Always be conversational and specific. Never be vague.`;
 
-    const response = await fetch('/api/chat', {
+    const response = await fetch(`${API_BASE}/api/chat`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -386,7 +388,7 @@ async function startCompare(){
   </div>`;
 
   try {
-    const response = await fetch('/api/chat', {
+    const response = await fetch(`${API_BASE}/api/chat`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
