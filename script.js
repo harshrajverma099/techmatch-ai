@@ -202,7 +202,7 @@ For PC builds: suggest specific component combinations.
 
 Always be conversational and specific. Never be vague.`;
 
-    const response = await fetch('http://localhost:3000/api/chat', {
+    const response = await fetch('/api/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -386,7 +386,7 @@ async function startCompare(){
   </div>`;
 
   try {
-    const response = await fetch('http://localhost:3000/api/chat', {
+    const response = await fetch('/api/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
