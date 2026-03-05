@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechMatch AI — Your Intelligent Gadget Advisor</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient blobs -->
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">TechMatch AI</div>
+  <div class="nav-links">
+    <button class="nav-link active" onclick="showSection('home')">Home</button>
+    <button class="nav-link" onclick="showSection('chat')">💬 Advisor</button>
+    <button class="nav-link" onclick="showSection('finder')">🔍 Finder</button>
+    <button class="nav-link" onclick="showSection('compare')">⚡ Compare</button>
+    <button class="nav-link" onclick="showSection('quiz')">🧠 Quiz</button>
+  </div>
+</nav>
+
+<!-- ══════════ HOME ══════════ -->
+<section id="home" class="section visible">
+  <div class="hero">
+    <div class="hero-eyebrow"><div class="pulse-dot"></div>AI-Powered Tech Advisor</div>
+    <h1>Find Your<span class="line2">Perfect Tech</span></h1>
+    <p class="hero-sub">Tell us what you need in plain English. Our AI analyzes your budget, use case, and lifestyle to recommend the best gadgets — not just the most popular ones.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showSection('chat')">💬 Chat with AI Advisor</button>
+      <button class="btn-ghost" onclick="showSection('quiz')">🧠 Take Gadget Quiz</button>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card" onclick="showSection('chat')">
+        <span class="feat-icon">🤖</span>
+        <div class="feat-title">AI Natural Language Advisor</div>
+        <div class="feat-desc">Describe your needs in plain text — get instant smart recommendations</div>
+      </div>
+      <div class="feat-card" onclick="showSection('finder')">
+        <span class="feat-icon">🧬</span>
+        <div class="feat-title">Device DNA Profiles</div>
+        <div class="feat-desc">Visual performance scores: Gaming, Battery, Portability & more</div>
+      </div>
+      <div class="feat-card" onclick="showSection('finder')">
+        <span class="feat-icon">🔮</span>
+        <div class="feat-title">Future-Proof Score</div>
+        <div class="feat-desc">Know how long your device will stay relevant — before you buy</div>
+      </div>
+      <div class="feat-card" onclick="showSection('compare')">
+        <span class="feat-icon">⚡</span>
+        <div class="feat-title">Smart Comparison</div>
+        <div class="feat-desc">Side-by-side spec battles with AI-powered winner analysis</div>
+      </div>
+      <div class="feat-card" onclick="showSection('quiz')">
+        <span class="feat-icon">🧠</span>
+        <div class="feat-title">Personality Quiz</div>
+        <div class="feat-desc">Answer 5 questions — discover your tech personality type</div>
+      </div>
+      <div class="feat-card" onclick="showSection('chat')">
+        <span class="feat-icon">⚠️</span>
+        <div class="feat-title">Device Warnings</div>
+        <div class="feat-desc">AI flags known issues: overheating, bad batteries, build problems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CHAT ══════════ -->
+<section id="chat" class="section">
+  <div class="chat-layout">
+    <!-- Sidebar -->
+    <div class="chat-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Quick Ask</div>
+        <div class="quick-prompts">
+          <button class="qp-btn" onclick="injectPrompt('Best laptop under ₹70,000 for video editing with Ryzen processor and long battery')">💻 Video editing laptop under ₹70k</button>
+          <button class="qp-btn" onclick="injectPrompt('Best smartphone under $400 for photography and battery life')">📱 Best camera phone under $400</button>
+          <button class="qp-btn" onclick="injectPrompt('Gaming laptop under ₹1,00,000 with RTX GPU and 144Hz display')">🎮 Gaming laptop under ₹1L</button>
+          <button class="qp-btn" onclick="injectPrompt('Best wireless headphones for music and calls under $150')">🎧 Headphones under $150</button>
+          <button class="qp-btn" onclick="injectPrompt('Lightweight tablet for students under ₹30,000')">📟 Student tablet under ₹30k</button>
+          <button class="qp-btn" onclick="injectPrompt('Best smartwatch for fitness tracking under $200')">⌚ Fitness smartwatch under $200</button>
+        </div>
+      </div>
+      <div class="sidebar-cats">
+        <div class="cat-label">Filter By Category</div>
+        <div class="cat-chips">
+          <div class="cat-chip on" onclick="toggleCat(this)">All</div>
+          <div class="cat-chip" onclick="toggleCat(this)">💻 Laptops</div>
+          <div class="cat-chip" onclick="toggleCat(this)">📱 Phones</div>
+          <div class="cat-chip" onclick="toggleCat(this)">📟 Tablets</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🎧 Headphones</div>
+          <div class="cat-chip" onclick="toggleCat(this)">⌚ Smartwatches</div>
+          <div class="cat-chip" onclick="toggleCat(this)">📷 Cameras</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🎮 Gaming</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🖥️ Desktops</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🖨️ PC Parts</div>
+        </div>
+        <div class="cat-label" style="margin-top:1rem">Use Case</div>
+        <div class="cat-chips">
+          <div class="cat-chip" onclick="toggleCat(this)">🎬 Editing</div>
+          <div class="cat-chip" onclick="toggleCat(this)">💻 Coding</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🎮 Gaming</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🎓 Student</div>
+          <div class="cat-chip" onclick="toggleCat(this)">💼 Business</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🎵 Music</div>
+          <div class="cat-chip" onclick="toggleCat(this)">🤖 AI/ML</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat main -->
+    <div class="chat-main">
+      <div class="chat-topbar">
+        <div class="chat-topbar-info">
+          <div class="ai-avatar">🤖</div>
+          <div>
+            <div class="ai-name">TechMatch AI Advisor</div>
+            <div class="ai-status"><div class="status-dot"></div>Online & Ready</div>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button class="icon-btn" onclick="clearChat()">🗑 Clear</button>
+          <button class="icon-btn" onclick="showSection('finder')">🔍 Open Finder</button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <!-- Welcome message -->
+        <div class="msg ai">
+          <div class="msg-avatar">🤖</div>
+          <div class="msg-bubble">
+            <strong>Hey! I'm your TechMatch AI Advisor.</strong> 👋<br><br>
+            I can help you find the <strong>perfect gadget</strong> based on your exact needs. Just describe what you're looking for in plain language. For example:<br><br>
+            <span class="tag">💻 laptop for video editing under ₹80k</span>
+            <span class="tag">📱 camera phone under $500</span>
+            <span class="tag">🎮 gaming setup under $1000</span><br><br>
+            I'll analyze your requirements and give you <strong>personalized recommendations</strong> with Device DNA scores, future-proof ratings, and honest warnings. What are you looking for?
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="chat-input-row">
+          <textarea
+            class="chat-textarea"
+            id="chatInput"
+            placeholder="Ask anything — 'Best laptop for video editing under ₹70,000 with Ryzen and good battery...'"
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">➤</button>
+        </div>
+        <div class="input-hints">
+          <div class="hint-chip" onclick="injectPrompt('Compare MacBook Air M3 vs Dell XPS 15')">Compare two laptops</div>
+          <div class="hint-chip" onclick="injectPrompt('What are the known issues with Samsung Galaxy S24?')">Check device warnings</div>
+          <div class="hint-chip" onclick="injectPrompt('Best budget gaming PC build under $800')">PC build advice</div>
+          <div class="hint-chip" onclick="injectPrompt('Which is more future-proof: iPhone 16 or Pixel 9?')">Future-proof check</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FINDER ══════════ -->
+<section id="finder" class="section">
+  <div class="finder-section">
+    <h2 class="section-heading">Smart Gadget Finder</h2>
+    <p class="section-sub">Use filters to narrow down — our AI scores each device for your exact needs</p>
+    <div class="finder-grid">
+      <div class="finder-filters">
+        <div class="filter-title">Refine Search</div>
+        <div class="filter-group">
+          <label class="filter-label">Category</label>
+          <select class="filter-input" id="f-category" onchange="renderFinderResults()">
+            <option value="">All Categories</option>
+            <option>Laptops</option>
+            <option>Smartphones</option>
+            <option>Tablets</option>
+            <option>Headphones</option>
+            <option>Smartwatches</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Budget (₹)</label>
+          <div class="range-row">
+            <input type="range" id="f-budget" min="10000" max="300000" step="5000" value="150000" oninput="document.getElementById('bv').textContent='₹'+parseInt(this.value).toLocaleString('en-IN');renderFinderResults()">
+            <span class="range-val" id="bv">₹1,50,000</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Primary Use</label>
+          <div class="filter-chips">
+            <div class="filter-chip" onclick="toggleFilter(this,'use','Gaming')">🎮 Gaming</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'use','Video Editing')">🎬 Editing</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'use','Coding')">💻 Coding</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'use','Student')">🎓 Student</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'use','Business')">💼 Business</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'use','AI/ML')">🤖 AI/ML</div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Priority</label>
+          <div class="filter-chips">
+            <div class="filter-chip" onclick="toggleFilter(this,'prio','Performance')">⚡ Performance</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'prio','Battery')">🔋 Battery</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'prio','Portability')">🪶 Portable</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'prio','Display')">🖥 Display</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'prio','Value')">💰 Value</div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Processor</label>
+          <div class="filter-chips">
+            <div class="filter-chip" onclick="toggleFilter(this,'cpu','Intel')">Intel</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'cpu','AMD Ryzen')">AMD Ryzen</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'cpu','Apple M')">Apple M</div>
+            <div class="filter-chip" onclick="toggleFilter(this,'cpu','Snapdragon')">Snapdragon</div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Min RAM</label>
+          <select class="filter-input" id="f-ram" onchange="renderFinderResults()">
+            <option value="0">Any</option>
+            <option value="8">8GB+</option>
+            <option value="16">16GB+</option>
+            <option value="32">32GB+</option>
+          </select>
+        </div>
+        <button class="apply-btn" onclick="renderFinderResults()">✨ Find Best Matches</button>
+        <button class="apply-btn" style="background:var(--s2);color:var(--text);margin-top:.5rem;box-shadow:none" onclick="askAIFinderHelp()">🤖 Ask AI Instead</button>
+      </div>
+      <div>
+        <div class="results-header">
+          <span class="results-count" id="resultsCount">Showing all devices</span>
+          <select class="sort-select" id="sortSelect" onchange="renderFinderResults()">
+            <option>Sort: Best Match</option>
+            <option>Sort: Price Low-High</option>
+            <option>Sort: Price High-Low</option>
+            <option>Sort: Top Rated</option>
+          </select>
+        </div>
+        <div class="results-grid" id="finderResults"><!-- rendered by JS --></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COMPARE ══════════ -->
+<section id="compare" class="section">
+  <div class="compare-section">
+    <h2 class="section-heading">Device Showdown</h2>
+    <p class="section-sub">Compare any two devices spec-by-spec with AI-powered analysis</p>
+    <div style="display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px">Device 1</div>
+        <div class="compare-input-row">
+          <input class="compare-input" id="dev1Input" placeholder="e.g. MacBook Air M3" onkeydown="if(event.key==='Enter')startCompare()">
+          <button class="add-compare-btn" onclick="startCompare()">Compare</button>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px">Device 2</div>
+        <div class="compare-input-row">
+          <input class="compare-input" id="dev2Input" placeholder="e.g. Dell XPS 15" onkeydown="if(event.key==='Enter')startCompare()">
+        </div>
+      </div>
+    </div>
+    <div id="compareResults"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
+      <span style="font-size:.75rem;color:var(--muted);margin-right:.3rem">Quick compare:</span>
+      <button class="hint-chip" onclick="quickCompare('MacBook Air M3','Dell XPS 15')">MacBook Air M3 vs Dell XPS 15</button>
+      <button class="hint-chip" onclick="quickCompare('iPhone 16 Pro','Samsung Galaxy S25 Ultra')">iPhone 16 Pro vs Galaxy S25 Ultra</button>
+      <button class="hint-chip" onclick="quickCompare('ASUS ROG Zephyrus G14','Lenovo Legion 5')">ROG G14 vs Legion 5</button>
+      <button class="hint-chip" onclick="quickCompare('Sony WH-1000XM5','Bose QC45')">Sony XM5 vs Bose QC45</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUIZ ══════════ -->
+<section id="quiz" class="section">
+  <div class="quiz-section">
+    <div id="quizContainer"><!-- rendered by JS --></div>
+  </div>
+</section>
+<script src="script.js" ></script>
+</body>
+</html>
+
