@@ -159,7 +159,7 @@ function clearChat(){
   </div>`;
 }
 
-const API_BASE = 'https://techmatch-ai.vercel.app';
+const API_BASE = ''; // same-origin for public hosting (Vercel)
 
 async function sendMessage(){
   if(isSending) return;
